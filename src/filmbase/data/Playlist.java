@@ -10,17 +10,17 @@ public class Playlist {
         if(films.contains(film)){
             return false;
         }
-        films.addLast(film);
+        films.add(film);
         return true;
     }
 
     public Film playFilm() {
         if (films.isEmpty()) return null;
-        return films.removeFirst();
+        return films.remove(0);
     }
 
     public Film displayNextFilm(){
-        return films.getFirst();
+        return films.get(0);
     }
 
     public int filmAmount(){

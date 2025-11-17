@@ -1,19 +1,17 @@
 package filmbase.data;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Film {
     private String Title;
     private int Year;
-    private Genre genre;
-
-    public Film(String Title, int Year) {
-        this.Title = Title;
-        this.Year = Year;
-    }
+    private Collection <Genre> genres = new ArrayList<>();
 
     public Film(String title,int year, Genre genre) {
-        Year = year;
-        Title = title;
-        this.genre = genre;
+        this.Year = year;
+        this.Title = title;
+        this.genres.add(genre);
     }
 
     public String getTitle() {
@@ -33,24 +31,21 @@ public class Film {
     }
 
 
-    public Genre getGenre() {
-        return genre;
+    public Collection<Genre> getGenres() {
+        return genres;
     }
 
-    public void setGenre(Genre genre) {
-        this.genre = genre;
+    public void setGenres(Collection<Genre> genres) {
+        this.genres = genres;
     }
-
 
     public boolean hasGenre(Genre genre) {
-        return this.genre == genre;
+        return genres.contains(genre);
     }
 
 
     public void removeGenre(Genre genre) {
-        if (this.genre == genre) {
-            this.genre = null;
-        }
+        genres.remove(genre);
     }
 
 
@@ -58,6 +53,12 @@ public class Film {
     public String toString() {
         return "Film: " +
                 "" + Title +
-                " (" + Year+")" + " : " + genre;
+                " (" + Year+")" + " : " + genres;
+    }
+
+    public void addGenre(Genre genre) {
+        if (!genres.contains(genre)) {
+            genres.add(genre);
+        }
     }
 }
