@@ -17,9 +17,9 @@ public class Filmbase {
 
     public void start(){
         System.out.println("FilmBasen er startet");
-        //initFilms();
+        initFilms();
         //printList(allFilms);
-        testPlaylist();
+        testFiltering();
 
     }
 
@@ -61,4 +61,23 @@ public class Filmbase {
         }
 
     }
+
+
+    private void testFiltering() {
+        Playlist playlist = new Playlist();
+        playlist.addFilm(allFilms.get(1));
+        playlist.addFilm(allFilms.get(2));
+        playlist.addFilm(allFilms.get(3));
+        playlist.addFilm(allFilms.get(4));
+
+        printList(playlist.showFilmList());
+        Film remove = playlist.showFilmList().get(1);
+        remove.removeGenre(Genre.Biography);
+
+        System.out.println("\nEfter removeGenre:");
+        printList(playlist.showFilmList());
+
+
+    }
+
 }

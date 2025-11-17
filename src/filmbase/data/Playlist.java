@@ -44,4 +44,15 @@ public class Playlist {
         }
     }
 
+
+    public void removeGenre(Genre genre) {
+//        for (Film film : films) {
+//            if (film.hasGenre(genre)) {
+//                films.remove(film);
+//            }
+//        }
+        films.removeIf(film -> film.hasGenre(genre));
+
+    }
+
 }

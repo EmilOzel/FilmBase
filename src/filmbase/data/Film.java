@@ -41,6 +41,19 @@ public class Film {
         this.genre = genre;
     }
 
+
+    public boolean hasGenre(Genre genre) {
+        return this.genre == genre;
+    }
+
+
+    public void removeGenre(Genre genre) {
+        if (this.genre == genre) {
+            this.genre = null;
+        }
+    }
+
+
     @Override
     public String toString() {
         return "Film: " +
