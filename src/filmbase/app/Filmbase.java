@@ -16,8 +16,10 @@ public class Filmbase {
 
     public void start(){
         System.out.println("FilmBasen er startet");
-        initFilms();
-        printList(allFilms);
+        //initFilms();
+        //printList(allFilms);
+        testPlaylist();
+
     }
 
     private void initFilms(){
@@ -33,16 +35,27 @@ public class Filmbase {
     }
 
     public void printList(Collection<Film> films){
-        for(Film f: allFilms){
+        for(Film f: films){
             System.out.println(f);
         }
 
     }
 
 
-    private void testPlaylist(){
+    public void testPlaylist(){
+        initFilms();
         Playlist playlist = new Playlist();
         playlist.addFilm(allFilms.get(1));
-    }
+        playlist.addFilm(allFilms.get(4));
+        playlist.addFilm(allFilms.get(7));
+        for(Film f:playlist.showFilmList()){
+            System.out.println(f);
+        }
 
+        while (playlist.hasNext()) {
+            Film next = playlist.playFilm();
+            System.out.println("Afspiller: " + next);
+        }
+
+    }
 }
