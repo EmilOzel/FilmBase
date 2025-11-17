@@ -1,6 +1,7 @@
 package filmbase.app;
 
 import filmbase.data.Film;
+import filmbase.data.Genre;
 import filmbase.data.Playlist;
 
 import java.util.ArrayList;
@@ -23,14 +24,15 @@ public class Filmbase {
     }
 
     private void initFilms(){
-        allFilms.add(new Film("The Godfather", 1972));
-        allFilms.add(new Film("Shawshank redemption", 1994));
-        allFilms.add(new Film("Schindler's List", 1993));
-        allFilms.add(new Film("Raging Bull", 1980));
-        allFilms.add(new Film("Citizen Kane", 1941));
-        allFilms.add(new Film("Psycho", 1960));
-        allFilms.add(new Film("ET", 1982));
-        allFilms.add(new Film("The Silence Of The Lambs", 1991));
+        allFilms.add(new Film("The Godfather", 1972, Genre.Crime));
+        allFilms.add(new Film("Shawshank Redemption", 1994, Genre.Drama));
+        allFilms.add(new Film("Schindler's List", 1993, Genre.Biography));
+        allFilms.add(new Film("Raging Bull", 1980, Genre.Biography));
+        allFilms.add(new Film("Citizen Kane", 1941, Genre.Drama));
+        allFilms.add(new Film("Psycho", 1960, Genre.Horror));
+        allFilms.add(new Film("ET", 1982, Genre.Family));
+        allFilms.add(new Film("The Silence Of The Lambs", 1991, Genre.Crime));
+
 
     }
 
@@ -38,6 +40,7 @@ public class Filmbase {
         for(Film f: films){
             System.out.println(f);
         }
+
 
     }
 
