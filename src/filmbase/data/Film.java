@@ -34,10 +34,6 @@ public class Film {
         return genres;
     }
 
-    public void setGenres(Collection<Genre> genres) {
-        this.genres = (Set<Genre>) genres;
-    }
-
     public boolean hasGenre(Genre genre) {
         return genres.contains(genre);
     }
