@@ -24,7 +24,7 @@ public class Filmbase {
     }
 
     private void initFilms(){
-        allFilms.add(new Film("The Godfather", 1972, Genre.Crime, Genre.Drama));
+        allFilms.add(new Film("The Godfather", 1972, Genre.Crime, Genre.Drama, Genre.Crime));
         allFilms.add(new Film("Shawshank Redemption", 1994, Genre.Drama));
         allFilms.add(new Film("Schindler's List", 1993, Genre.Biography));
         allFilms.add(new Film("Raging Bull", 1980, Genre.Biography));
@@ -68,7 +68,7 @@ public class Filmbase {
 
     private void testFiltering() {
         Playlist playlist = new Playlist();
-        playlist.addFilm(allFilms.get(1));
+        playlist.addFilm(allFilms.get(0));
         playlist.addFilm(allFilms.get(2));
         playlist.addFilm(allFilms.get(3));
         playlist.addFilm(allFilms.get(7));

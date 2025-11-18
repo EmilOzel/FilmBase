@@ -1,13 +1,11 @@
 package filmbase.data;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class Film {
     private String Title;
     private int Year;
-    private Collection<Genre> genres = new ArrayList<Genre>();
+    private Set<Genre> genres = new TreeSet<>();
 
     public Film(String title,int year, Genre... genres) {
         this.Year = year;
@@ -37,7 +35,7 @@ public class Film {
     }
 
     public void setGenres(Collection<Genre> genres) {
-        this.genres = genres;
+        this.genres = (Set<Genre>) genres;
     }
 
     public boolean hasGenre(Genre genre) {
