@@ -52,7 +52,6 @@ public class Playlist {
 //            }
 //        }
         films.removeIf(film -> film.hasGenre(genre));
-
     }
 
 }

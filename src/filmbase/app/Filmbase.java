@@ -18,13 +18,13 @@ public class Filmbase {
     public void start(){
         System.out.println("FilmBasen er startet");
         initFilms();
-        printList(allFilms);
-        //testFiltering();
+        //printList(allFilms);
+        testFiltering();
 
     }
 
     private void initFilms(){
-        allFilms.add(new Film("The Godfather", 1972, Genre.Crime));
+        allFilms.add(new Film("The Godfather", 1972, Genre.Crime, Genre.Drama));
         allFilms.add(new Film("Shawshank Redemption", 1994, Genre.Drama));
         allFilms.add(new Film("Schindler's List", 1993, Genre.Biography));
         allFilms.add(new Film("Raging Bull", 1980, Genre.Biography));
@@ -32,8 +32,6 @@ public class Filmbase {
         allFilms.add(new Film("Psycho", 1960, Genre.Horror));
         allFilms.add(new Film("ET", 1982, Genre.Family));
         allFilms.add(new Film("The Silence Of The Lambs", 1991, Genre.Crime));
-        allFilms.getLast().addGenre(Genre.Drama);
-        allFilms.getLast().addGenre(Genre.History);
 
 
 
@@ -68,21 +66,20 @@ public class Filmbase {
 //    }
 
 
-//    private void testFiltering() {
-//        Playlist playlist = new Playlist();
-//        playlist.addFilm(allFilms.get(1));
-//        playlist.addFilm(allFilms.get(2));
-//        playlist.addFilm(allFilms.get(3));
-//        playlist.addFilm(allFilms.get(4));
-//
-//        printList(playlist.showFilmList());
-//        Film remove = playlist.showFilmList().get(1);
-//        remove.removeGenre(Genre.Biography);
-//
-//        System.out.println("\nEfter removeGenre:");
-//        printList(playlist.showFilmList());
-//
-//
-//    }
+    private void testFiltering() {
+        Playlist playlist = new Playlist();
+        playlist.addFilm(allFilms.get(1));
+        playlist.addFilm(allFilms.get(2));
+        playlist.addFilm(allFilms.get(3));
+        playlist.addFilm(allFilms.get(7));
+
+        printList(playlist.showFilmList());
+        playlist.removeGenre(Genre.Drama);
+
+        System.out.println("\nEfter removeGenre:");
+        printList(playlist.showFilmList());
+
+
+    }
 
 }
